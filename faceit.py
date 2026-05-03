@@ -22,7 +22,7 @@ async def get_stats(api_key: str, player_id: str) -> dict | None:
     headers = {"Authorization": f"Bearer {api_key}"}
 
     async with aiohttp.ClientSession(headers=headers) as session:
-        async with session.get(f"{BASE_URL}/players/{player_id}/games/cs2") as resp:
+        async with session.get(f"{BASE_URL}/players/{player_id}/stats/cs2") as resp:
             if resp.status == 404:
                 return None
             
